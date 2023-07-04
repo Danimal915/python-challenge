@@ -14,8 +14,6 @@ percentage2 = 0
 percentage3 = 0
 vote_array = []
 unique_candidate_list = []
-#max_change = 0
-#min_change = 0
 
 # Define function that accepts 'election_analysis_data' as parameter
 def print_stats(election_analysis_data):
