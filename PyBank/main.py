@@ -48,7 +48,7 @@ with open(budget_data_csv, 'r') as csvfile:
         total += int(row[1])
        
 
-
+print("-------------------------------")
 print("Financial Analysis")
 print("-------------------------------")
 
@@ -79,4 +79,5 @@ for j in range(len(profit_loss_change_array)):
         print(f"Greatest increase Month: {date_array[j+1]} ($ {max_change})")
     elif profit_loss_change_array[j] == min(profit_loss_change_array):
         print(f"Greatest decrease Month: {date_array[j+1]} ($ {min_change})")
-              
+
+print("-------------------------------")            
