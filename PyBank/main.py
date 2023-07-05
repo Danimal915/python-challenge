@@ -77,8 +77,10 @@ print(f"Average Change: ${rounded_number}")
 for j in range(len(profit_loss_change_array)):
     if profit_loss_change_array[j] == max(profit_loss_change_array):
         print(f"Greatest increase Month: {date_array[j+1]} ($ {max_change})")
+        inc_month = date_array[j+1]
     elif profit_loss_change_array[j] == min(profit_loss_change_array):
         print(f"Greatest decrease Month: {date_array[j+1]} ($ {min_change})")
+        decr_month = date_array[j+1]
 
 print("-------------------------------")            
 
@@ -89,6 +91,6 @@ results = open(results_path, "w")
 results.write('Total Months: ' + str(count_month) + '\n')
 results.write('Total: $' + str(total) + '\n')
 results.write('Average Change: $' + str(rounded_number) + '\n')
-results.write('Greatest Increase: $' + str(max_change) + '\n')
-results.write('Greatest Decrease: $' + str(min_change) + '\n')
+results.write('Greatest Increase: ' + str(inc_month) + ' ($' + str(max_change) + ')' + '\n')
+results.write('Greatest Decrease: ' +str(decr_month) + ' ($' + str(min_change) + ')' + '\n')
 results.close()
