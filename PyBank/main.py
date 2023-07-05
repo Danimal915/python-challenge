@@ -57,7 +57,7 @@ print(f"Total Months: {count_month}")
 print(f"Total: ${total}")
 
 
-
+# Create list for monthly changes
 for i in range(len(profit_loss_array)):
     #If statement to avoid Index out of range error
     if i < ((len(profit_loss_array)) - 1):
@@ -68,12 +68,12 @@ max_change = max(profit_loss_change_array)
 min_change = min(profit_loss_change_array)
 
 
-
+# Calculate average change
 sum_changes = sum(profit_loss_change_array)/len(profit_loss_change_array)
 rounded_number = round(sum_changes, 2)
 print(f"Average Change: ${rounded_number}")
 
-
+# Get the greatest increases and decreases for all months
 for j in range(len(profit_loss_change_array)):
     if profit_loss_change_array[j] == max(profit_loss_change_array):
         print(f"Greatest increase Month: {date_array[j+1]} ($ {max_change})")
@@ -81,3 +81,14 @@ for j in range(len(profit_loss_change_array)):
         print(f"Greatest decrease Month: {date_array[j+1]} ($ {min_change})")
 
 print("-------------------------------")            
+
+
+# Writeto text file /Analyses/results.txt
+results_path = os.path.join('Analyses', 'results.txt')
+results = open(results_path, "w")
+results.write('Total Months: ' + str(count_month) + '\n')
+results.write('Total: $' + str(total) + '\n')
+results.write('Average Change: $' + str(rounded_number) + '\n')
+results.write('Greatest Increase: $' + str(max_change) + '\n')
+results.write('Greatest Decrease: $' + str(min_change) + '\n')
+results.close()

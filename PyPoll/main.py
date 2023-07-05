@@ -78,8 +78,13 @@ percentage_list = [percentage_rounded_number1, percentage_rounded_number2, perce
 
 for i in range(len(unique_candidate_list)):
     print(f"{unique_candidate_list[i]}: {percentage_list[i]}% ({vote_count_list[i]})")
-    results_list = [unique_candidate_list[i], percentage_list[i], vote_count_list[i]]
-    
+    results_list0 = unique_candidate_list[0]
+    results_list1 = unique_candidate_list[1]
+    results_list2 = unique_candidate_list[2]
+
+    vote_count0 = vote_count_list[0]
+    vote_count1 = vote_count_list[1]
+    vote_count2 = vote_count_list[2]
 
 max_votes = max(vote_count_list)
 
@@ -88,3 +93,26 @@ for j in range(len(unique_candidate_list)):
         print("-------------------------------")
         print(f"Winner: {unique_candidate_list[j]}")
         print("-------------------------------")
+        winner = unique_candidate_list[j]
+
+candidate1 = results_list0[0]
+candidate2 = results_list1[0]
+candidate3 = results_list2[0]
+
+candidate1 = results_list0[0]
+candidate2 = results_list1[0]
+candidate3 = results_list2[0]
+
+candidate1 = results_list0[0]
+candidate2 = results_list1[0]
+candidate3 = results_list2[0]
+
+# Writeto text file /Analyses/results.txt
+results_path = os.path.join('Analyses', 'results.txt')
+results = open(results_path, "w")
+results.write('Total Votes: ' + str(count_votes) + '\n')
+results.write( str(results_list0) + ': ' + str(percentage_rounded_number1) + '% ' + '(' + str(vote_count0) + ')' + '\n')
+results.write( str(results_list1) + ': ' + str(percentage_rounded_number2) + '% ' + '(' + str(vote_count1) + ')'+ '\n')
+results.write( str(results_list2) + ': ' + str(percentage_rounded_number3) + '% ' + '(' + str(vote_count2) + ')'+ '\n')
+results.write('Winner: ' + str(winner) + '\n')
+results.close()
